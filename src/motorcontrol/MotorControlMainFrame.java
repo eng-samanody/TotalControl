@@ -182,14 +182,14 @@ public class MotorControlMainFrame extends javax.swing.JFrame implements Runnabl
         jPanel5 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        ipAddressTextFeild = new javax.swing.JTextField();
+        portNumberTextFeild = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        remoteConnectButton = new javax.swing.JButton();
+        remoteDisconnectButton = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         motorControlMainMenuBar = new javax.swing.JMenuBar();
         exitMenuItem = new javax.swing.JMenu();
@@ -825,9 +825,9 @@ public class MotorControlMainFrame extends javax.swing.JFrame implements Runnabl
 
         jLabel11.setText("Port :");
 
-        jTextField1.setText("IP Address");
+        ipAddressTextFeild.setText("IP Address");
 
-        jTextField2.setText("Port Number");
+        portNumberTextFeild.setText("Port Number");
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/motorcontrol/img/1425085368_keyboard_layout.png"))); // NOI18N
 
@@ -837,46 +837,46 @@ public class MotorControlMainFrame extends javax.swing.JFrame implements Runnabl
 
         jRadioButton2.setText("Client");
 
-        jButton1.setText("Connect");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        remoteConnectButton.setText("Connect");
+        remoteConnectButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                remoteConnectButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Disconnect");
+        remoteDisconnectButton.setText("Disconnect");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(remoteConnectButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(remoteDisconnectButton))
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                    .addComponent(jButton1)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2))
-                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addComponent(jLabel11)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField2))
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addComponent(jLabel10)
-                            .addGap(14, 14, 14)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jLabel12)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jRadioButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(portNumberTextFeild))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(14, 14, 14)
+                                .addComponent(ipAddressTextFeild, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -890,16 +890,16 @@ public class MotorControlMainFrame extends javax.swing.JFrame implements Runnabl
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ipAddressTextFeild, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(portNumberTextFeild, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11)))
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)))
+                    .addComponent(remoteConnectButton)
+                    .addComponent(remoteDisconnectButton)))
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -1139,10 +1139,10 @@ public class MotorControlMainFrame extends javax.swing.JFrame implements Runnabl
         JOptionPane.showMessageDialog(this, "Motor Control,Java Course project\nBy Embedded Systems Track Ismailia Branch InTake'35\n\nTeam members:\n    Ahmed Ayman\n    Aisha AbdElmagid\n    Kholoud Mosa\n    Mohamed Abdallah\n    Mohamed AbdElraouf","About",1);
     }//GEN-LAST:event_aboutMenuItemActionPerformed
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void remoteConnectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remoteConnectButtonActionPerformed
 
        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_remoteConnectButtonActionPerformed
 
     private void disconnectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disconnectButtonActionPerformed
 
@@ -1486,8 +1486,7 @@ public class MotorControlMainFrame extends javax.swing.JFrame implements Runnabl
     private javax.swing.JMenu helpMenu;
     private javax.swing.JMenuItem helpMenuItem;
     private javax.swing.JButton hornButton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JTextField ipAddressTextFeild;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1514,8 +1513,6 @@ public class MotorControlMainFrame extends javax.swing.JFrame implements Runnabl
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JButton leftButton;
     private javax.swing.JButton logFileBrowserButton;
@@ -1526,6 +1523,7 @@ public class MotorControlMainFrame extends javax.swing.JFrame implements Runnabl
     private javax.swing.JButton motorStartButton;
     private javax.swing.JButton motorStopButton;
     private javax.swing.JComboBox parityComboBox;
+    private javax.swing.JTextField portNumberTextFeild;
     private javax.swing.JSlider rcCarSpeedSlider;
     private javax.swing.JLabel rcCarTachometerLabel;
     private javax.swing.JPanel receiveJPanel;
@@ -1533,6 +1531,8 @@ public class MotorControlMainFrame extends javax.swing.JFrame implements Runnabl
     private javax.swing.JButton receivedTextClearButton;
     private javax.swing.JToggleButton redLightButton;
     private javax.swing.JButton refreshButton;
+    private javax.swing.JButton remoteConnectButton;
+    private javax.swing.JButton remoteDisconnectButton;
     private javax.swing.JSpinner repeatIntervalSpinner;
     private javax.swing.JCheckBox repeatSendingCheckBox;
     private javax.swing.JButton rightButton;
