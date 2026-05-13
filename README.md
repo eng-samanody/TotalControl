@@ -23,6 +23,8 @@ mvn clean verify
 
 The CI workflow runs the same command on every push and pull request.
 
+For development workflow details, see [docs/development.md](docs/development.md).
+
 ## Run
 
 ```sh
@@ -54,6 +56,8 @@ java -cp target\classes;target\lib\jssc-2.8.jar motorcontrol.MotorControlMainFra
 
 If the connected port disappears, the app stops the monitor loop, resets connection state, and prompts for reconnection.
 
+For a fuller operator checklist and safety notes, see [docs/operator-guide.md](docs/operator-guide.md).
+
 ## Receive Logging
 
 Use `Browse` in the Receive panel to choose a log file, then enable `Start Log`. Incoming serial data is appended to the selected file. Date and time prefixes follow the `Date` and `Time` checkboxes.
@@ -67,6 +71,12 @@ Use `Browse` in the Receive panel to choose a log file, then enable `Start Log`.
 ## Release
 
 See [docs/release-checklist.md](docs/release-checklist.md).
+
+Hardware smoke-test steps are documented in [docs/hardware-test-plan.md](docs/hardware-test-plan.md).
+
+## Support And Security
+
+For maintenance expectations, see [SUPPORT.md](SUPPORT.md). For responsible vulnerability reporting, see [SECURITY.md](SECURITY.md).
 
 ## License And Notices
 
