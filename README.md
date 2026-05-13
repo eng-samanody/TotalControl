@@ -24,6 +24,7 @@ mvn clean verify
 The CI workflow runs the same command on every push and pull request.
 
 For development workflow details, see [docs/development.md](docs/development.md).
+Run the verification command before opening a pull request.
 
 ## Run
 
